@@ -2,7 +2,7 @@
   "name": "lighthouse-cli",
   "version": "0.1.0",
   "description": "command-line interface for lighthouse issue tracker",
-  "main": "index.js",
+  "repository": "git://github.com/hapticdata/lighthouse-cli.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,5 +17,15 @@
     "colors": "^0.6.2",
     "commander": "^2.2.0",
     "cli-table": "^0.3.0"
+  },
+  "keywords": [
+    "lighthouse",
+    "tracking",
+    "bugs",
+    "issue",
+    "command-line"
+  ],
+  "engines": {
+    "node": ">0.8.0"
   }
 }
