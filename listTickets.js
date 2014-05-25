@@ -2,22 +2,8 @@ var _ = require('underscore'),
     launch = require('./launch'),
     Table = require('cli-table');
 
-var lowerCase = function( s ){
-    return s.toLowerCase();
-};
 
-var includes = function( txt, s ){
-    return s.toLowerCase().indexOf(txt.toLowerCase()) >= 0;
-};
-
-var makeFilter = function( prop, opt, transform ){
-    transform = transform || _.identity;
-    return function( t ){
-        return t[prop] && transform( t[prop] ) === transform( opt );
-    };
-};
-
-
+//these all connect to CLI options, use lh tickets -h to see them
 var queryMap = {
     'reportedBy' : 'reported_by',
     'notResponsible' : 'not-responsible',
@@ -26,6 +12,7 @@ var queryMap = {
     'notState' : 'not-state'
 };
 
+//more queryMap, values === keys
 _.reduce([
     'responsible',
     'milestone',
@@ -41,6 +28,13 @@ _.reduce([
     return mem;
 }, queryMap);
 
+
+/**
+ * retrieve a list of tickets matching the users query
+ * @param {Object} lighthouse the configured lighthouse object
+ * @param {Number} projectId the project's id number, can be found with `listProjects`
+ * @param {Object} options options related to the query to perform
+ */
 exports = module.exports = function( lighthouse, projectId, options ){
     var table = new Table();
 
