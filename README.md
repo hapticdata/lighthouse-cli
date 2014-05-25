@@ -44,7 +44,7 @@ Use `lh projects` to see your available projects. Grab the ID from that use it f
     -T, --not-tagged [tag]             Filter out tag
     -u, --updated [date]               Filter by when updated
     -c, --created [date]               Filter by created date
-    -o, --sOrt [type], Order by field
+    -o, --sOrt [type]                  Order by field
     -n, --number [number]              Only show tickets of this #
     -l, --limit [number]               Limit response, max 100
     -p, --plain                        Limit response to plain text
