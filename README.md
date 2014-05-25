@@ -34,22 +34,23 @@ Use `lh projects` to see your available projects. Grab the ID from that use it f
 
   Options:
 
-    -h, --help                         output usage information
-    -r, --responsible [person]         Filter by responsible party
-    -b, --reported-by [person]         Filter by person that reported
-    -m, --milestone [milestone]        Filter by milestone
-    -M, --not-milestone [milestone]    Filter out milestone
-    -s, --state [state]                Filter by state
-    -S, --not-state [state]            Filter out state
-    -i, --importance [importance]      Filter by importance
-    -t, --tagged [tag]                 Filter by tag
-    -T, --not-tagged [tag]             Filter out tag
-    -u, --updated [date]               Filter by when updated
-    -c, --created [date]               Filter by created date
-    -o, --sOrt [type]                  Order by field
-    -n, --number [number]              Only show tickets of this #
-    -l, --limit [number]               Limit response, max 100
-    -p, --plain                        Limit response to plain text
+    -h, --help                       output usage information
+    -r, --responsible [person]       Filter by responsible party
+    -b, --reported-by [person]       Filter by person that reported
+    -m, --milestone [milestone]      Filter by milestone
+    -M, --not-milestone [milestone]  Filter out milestone
+    -s, --state [state]              Filter by state
+    -S, --not-state [state]          Filter out state
+    -i, --importance [importance]    Filter by importance
+    -t, --tagged [tag]               Filter by tag
+    -T, --not-tagged [tag]           Filter out tag
+    -u, --updated [date]             Filter by when updated
+    -c, --created [date]             Filter by created date
+    -o, --sOrt [type]                Order by field
+    -n, --number [number]            Only show tickets of this #
+    -l, --limit [number]             Limit response, max 100
+    -L, --launch                     Launch the ticket(s) in your browser
+    -p, --plain                      Limit response to plain text
 ```
 
 #### Get your tickets that are new and are in milestone "check for launch":

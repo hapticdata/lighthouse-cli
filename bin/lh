@@ -40,11 +40,11 @@ program
     .option('-T, --not-tagged [tag]', 'Filter out tag', undefined)
     .option('-u, --updated [date]', 'Filter by when updated', undefined)
     .option('-c, --created [date]', 'Filter by created date', undefined)
-    .option('-o, --sOrt [type], Order by field', undefined)
+    .option('-o, --sOrt [type]', 'Order by field', undefined)
     .option('-n, --number [number]', 'Only show tickets of this #', undefined)
     .option('-l, --limit [number]', 'Limit response, max 100', undefined)
+    .option('-L, --launch', 'Launch the ticket(s) in your browser', undefined)
     .option('-p, --plain', 'Limit response to plain text', undefined)
-    //.option('-l, --launch', 'Launch in browser')
     .action( _.partial(listTickets, lighthouse) );
 
 

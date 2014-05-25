@@ -1,6 +1,6 @@
 {
   "name": "lighthouse-cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "command-line interface for lighthouse issue tracker",
   "repository": "git://github.com/hapticdata/lighthouse-cli.git",
   "scripts": {
