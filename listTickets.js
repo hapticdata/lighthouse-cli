@@ -85,7 +85,8 @@ exports = module.exports = function( lighthouse, projectId, options ){
                 ticket.attachments_count > 0 ? '✓'.yellow : ''
                 ]
             );
-            console.log( ticket.latest_body );
+
+            //console.log( ticket.latest_body );
             if( options.launch ){
                 launch(ticket.url);
             }
@@ -99,6 +100,6 @@ exports = module.exports = function( lighthouse, projectId, options ){
             console.log( table.toString() );
         }
 
-        console.log( (''+tickets.length).green + ' / ' + (numRemaining + ' tickets remaining').red );
+        console.log( (tickets.length +' tickets listed').green );
     });
 };
