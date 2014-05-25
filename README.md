@@ -2,6 +2,8 @@
 
 A command-line interface for the [Lighthouse Issue Tracker](http://lighthouseapp.com).
 
+![Example output](https://i.cloudup.com/0IWuQehheY.gif)
+
 ## Current Commands
 * `lh projects` list projects on your account
 * `lh tickets [project]` list tickets on your project

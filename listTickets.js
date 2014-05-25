@@ -55,7 +55,6 @@ exports = module.exports = function( lighthouse, projectId, options ){
         query.limit = Number(options.limit);
     }
 
-
     lighthouse.listTickets( query, function(err, tickets){
         if( err ){
             throw err;
