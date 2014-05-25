@@ -1,0 +1,57 @@
+#!/usr/bin/env node
+
+require('colors');
+var _ = require('underscore'),
+    program = require('commander'),
+    listTickets = require('../listTickets'),
+    listProjects = require('../listProjects'),
+    launch = require('../launch');
+
+var conf = {
+    // https://myaccount.lighthouseapp.com
+    account: process.env.LIGHTHOUSE_ACCOUNT,
+    // http://help.lighthouseapp.com/kb/api/how-do-i-get-an-api-token
+    token:  process.env.LIGHTHOUSE_TOKEN
+};
+
+var lighthouse = require("lighthouse-client").createClient(conf);
+
+
+//opens the page to create a ticket
+program
+    .command('new [project]')
+    .action(function(project){
+        launch( 'http://'+conf.account+'.lighthouseapp.com/projects/'+project+'/tickets/new' );
+    });
+
+
+//list tickets
+program
+    .command('tickets [project]')
+    .description('list the open tickets')
+    .option('-r, --responsible [person]', 'Filter by responsible party', undefined)
+    .option('-b, --reported-by [person]', 'Filter by person that reported', undefined)
+    .option('-m, --milestone [milestone]', 'Filter by milestone', undefined)
+    .option('-M, --not-milestone [milestone]', 'Filter out milestone', undefined)
+    .option('-s, --state [state]', 'Filter by state', undefined)
+    .option('-S, --not-state [state]', 'Filter out state', undefined)
+    .option('-i, --importance [importance]', 'Filter by importance', undefined)
+    .option('-t, --tagged [tag]', 'Filter by tag', undefined)
+    .option('-T, --not-tagged [tag]', 'Filter out tag', undefined)
+    .option('-u, --updated [date]', 'Filter by when updated', undefined)
+    .option('-c, --created [date]', 'Filter by created date', undefined)
+    .option('-o, --sOrt [type], Order by field', undefined)
+    .option('-n, --number [number]', 'Only show tickets of this #', undefined)
+    .option('-l, --limit [number]', 'Limit response, max 100', undefined)
+    .option('-p, --plain', 'Limit response to plain text', undefined)
+    //.option('-l, --launch', 'Launch in browser')
+    .action( _.partial(listTickets, lighthouse) );
+
+
+//list projects
+program
+    .command('projects')
+    .description('list projects')
+    .action( _.partial(listProjects, lighthouse) );
+
+program.parse(process.argv);
